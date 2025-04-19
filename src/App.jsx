@@ -15,7 +15,7 @@ function App() {
     `Ti amuuuu, ${girlfriendName}!`,
     "O amor é assim, Íris. — Dona Símia sorriu para mim. — Devastador, enlouquecedor, enriquecedor, arrebatador, ardente, intrigante, divertido, compreensivo, imprevisível e, às vezes, quem sabe, até mágico e surreal como cenas de novela...",
     "O amor pode ser traduzido em várias palavras que a gente pula no dicionário, mas que têm significados intensos e incríveis. A gente é nada e o amor é tudo. Tudo. Menos óbvio.",
-    "Você transformou minha vida num conto de Talvez eu prefira as coisas dez vezes mais bonitas. E que só ficam assim por sua causa, quando você tá perto..",
+    "Talvez eu prefira as coisas dez vezes mais bonitas. E que só ficam assim por sua causa, quando você tá perto..",
     "Quero minhas trufinhas na terça-feira."
   ]
 
