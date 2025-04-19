@@ -1,0 +1,275 @@
+/* Estilos base */
+:root {
+  --primary-color: #ff6b8b;
+  --secondary-color: #ffb8c6;
+  --text-color: #4a2a35;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+.app {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fff5f5 0%, #ffecef 100%);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 105, 140, 0.3);
+  text-align: center;
+  max-width: 800px;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: float 6s ease-in-out infinite;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.message-container {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.romantic-message {
+  font-size: 1.3rem;
+  color: var(--text-color);
+  font-style: italic;
+  line-height: 1.6;
+  transition: opacity 0.5s ease;
+}
+
+.photo-gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.memory-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.memory-photo:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.signature {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.signature .name {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+}
+
+/* Animação de coração */
+.heart {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: heartFloat 2s ease-in-out forwards;
+  z-index: 5;
+}
+
+.heart:before, .heart:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.heart:before {
+  top: -50%;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: -50%;
+}
+
+/* Partículas de fundo */
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  background-color: rgba(255, 182, 193, 0.6);
+  border-radius: 50%;
+  animation: particleMove linear infinite;
+}
+
+/* Animações */
+@keyframes heartFloat {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -150%) rotate(45deg) scale(0.5);
+  }
+}
+
+@keyframes particleMove {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(100vh) translateX(20px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .romantic-message {
+    font-size: 1.1rem;
+  }
+  
+  .memory-photo {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Estilos do Mini Player de Música */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 50px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(5px);
+  border: 2px solid #f8c9d4;
+  z-index: 100;
+  animation: slideIn 0.5s ease-out;
+}
+
+.player-controls {
+  display: flex;
+  gap: 5px;
+}
+
+.player-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #e84393;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.player-btn:hover {
+  background-color: #f8c9d4;
+  transform: scale(1.1);
+}
+
+.play-btn {
+  background-color: #e84393;
+  color: white;
+}
+
+.play-btn:hover {
+  background-color: #d6337a;
+}
+
+.song-info {
+  font-size: 14px;
+  color: #4a2a35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Efeito de pixel art (opcional para estilo Stardew Valley) */
+.pixel-effect {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
